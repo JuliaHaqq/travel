@@ -3,8 +3,10 @@ import {createAppContainer} from 'react-navigation';
 
 import Start from '../screens/Start';
 import Menu from '../screens/Menu'
-import Moderate from '../screens/Moderate1'
-import Tropical from '../screens/Tropical'
+import Pskov from '../screens/Pskov/Pskov'
+import Vladimir from '../screens/Vladimir/Vladimir'
+import Ufa from '../screens/Ufa/Ufa'
+import Astrakhan from '../screens/Astrakhan/Astrakhan'
  
 
 const stackNavigatorOptions = {
@@ -14,8 +16,10 @@ const stackNavigatorOptions = {
 const AppNavigator = createStackNavigator({
   Start: {screen: Start},
   Menu: {screen: Menu},
-  Moderate: {screen: Moderate},
-  Tropical: {screen: Tropical},
+  Pskov: {screen: Pskov},
+  Vladimir: {screen: Vladimir},
+  Ufa: {screen: Ufa},
+  Astrakhan: {screen: Astrakhan}
 },
 {
   defaultNavigationOptions : stackNavigatorOptions
