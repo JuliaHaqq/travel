@@ -15,58 +15,54 @@ export default class P_park extends React.Component{
   render(){
     
     const {navigate} = this.props.navigation
-
-    const c_1 = data.pskov.park.p_1;
-
     
-
     return(
       <LinearGradient 
-      colors={['#C9FFBF', '#FFAFBD']} 
-      style={styles.centeredView}
-      >
-        <ScrollView>
-          {Object.keys(data.pskov.park).map((item, index) => 
-            <>
-            
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={this.state.modalVisible[index]}
-              onRequestClose={() => {
-                this.setState({modalVisible: {...this.state.modalVisible, [index]: false}});
-              }}
+              colors={['#C9FFBF', '#FFAFBD']} 
+              style={styles.centeredView}
             >
-              <LinearGradient
-                colors={['#86fde8', '#FFAFBD']} 
-                style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>{data.pskov.park[item].description}</Text>
-                  <Pressable
-                    style={[styles.button, styles.buttonClose]}
-                    onPress={() => this.setState({modalVisible: {...this.state.modalVisible, [index]: false}})}
-                  >
-                    <Text style={styles.textStyle}>Закрыть</Text>
-                  </Pressable>
+          <ScrollView>
+        {Object.keys(data.pskov.park).map((item, index) => {
+        return(
+          
+          <React.Fragment key={data.pskov.park[item].id}>
+              <Modal
+                animationType="slide"
+                transparent={true}
+                visible={this.state.modalVisible[index]}
+                onRequestClose={() => {
+                  this.setState({modalVisible: {...this.state.modalVisible, [index]: false}});
+                }}
+              >
+                  <View style={styles.modalView}>
+                    <Text style={styles.modalText}>{data.pskov.park[item].description}</Text>
+                    <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => this.setState({modalVisible: {...this.state.modalVisible, [index]: false}})}
+                    >
+                      <Text style={styles.textStyle}>Закрыть</Text>
+                    </Pressable>
+                  </View>
+              </Modal>
+              
+              <Pressable 
+                style={[styles.button, styles.buttonOpen, styles.img]}
+                onPress={() => 
+                  this.setState({modalVisible: {...this.state.modalVisible, [index]: true}})
+                }
+              > 
+                <View>
+                  <Text style={{alignItems: "center", marginBottom: 10, fontSize: 17, marginLeft: 5, marginRight: 5}}>{data.pskov.park[item].name}</Text>
                 </View>
-              </LinearGradient>
-            </Modal>
-
-            <Pressable
-              style={[styles.button, styles.buttonOpen, styles.img]}
-              onPress={() => 
-                this.setState({modalVisible: {...this.state.modalVisible, [index]: true}})
-              }
-            > 
-              <View>
-                <Text style={{alignItems: "center", marginBottom: 10, fontSize: 17}}>{data.pskov.park[item].name}</Text>
-              </View>
-              <Image source={{ uri: data.pskov.park[item].img }} style={{ width: 250, height: 250,  borderRadius: 10, justifyContent: "center"}} />
-            </Pressable>
-            </>
-          )}
+                <Image  source={{ uri: data.pskov.park[item].img }} style={{ width: 250, height: 250,  borderRadius: 10, justifyContent: "center"}} />
+              </Pressable>
+            
+          </React.Fragment>
+          
+        )})}
         </ScrollView>
-        <View >
+
+        <View>
               <TouchableOpacity
                 onPress={()=>navigate('Pskov')}
               >
@@ -74,9 +70,8 @@ export default class P_park extends React.Component{
               </TouchableOpacity>
         </View>
       </LinearGradient>
-    )
-  }
-}
+      
+)}}
 
 
 const styles =StyleSheet.create({

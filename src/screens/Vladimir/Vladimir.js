@@ -31,12 +31,10 @@ export default class Vladimir extends React.Component{
                 <Image source={require('../../images/church100.png')}/>
               </TouchableOpacity>
               <Text style={{
-                
-
                 textAlign:'center',
                 marginTop:5,
                 opacity:0.8 }}
-              >Церкви</Text>
+              >Храмы</Text>
             </View>
 
             <View style={styles.img_gg}>
