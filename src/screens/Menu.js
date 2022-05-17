@@ -1,53 +1,71 @@
-import React from 'react';
-import { Text, View, Image, TextInput, Button, Alert, StyleSheet } from 'react-native';
+
+import { Text, View, Image, TextInput, Button, Alert, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from '@expo/vector-icons/AntDesign';
 import { LinearGradient } from 'expo-linear-gradient';
+import React, { useState } from 'react';
+
+
+
 
 export default class Menu extends React.Component{
+
   render(){
+    
     const {navigate} = this.props.navigation
+
     return(
       <LinearGradient
         colors={['#86fde8','#bfe9ff', '#6be585']} 
         style={styles.container}
       >
         <Text style={{
-          fontSize:15,
-          fontFamily:'SemiBold',
+          fontSize:25,
           alignSelf:'center', }}
-        >Выберите климатический пояс</Text>
+        >Выберите город</Text>
         <Text style={{
-          fontFanily: 'Regular',
-          marginHrizontal: 55,
           textAlign:'center',
           marginTop:5,
           opacity:0.4 }}
-        >От этого будут зависеть предметы</Text>
+        ></Text>       
         <View style={styles.btn}>
           <Button
-                onPress={()=>navigate('Moderate')}
-                title="Умеренный"
-                color='#1B9A1B'
+                onPress={()=>navigate('Pskov')}
+                title="Псков"
+                color='#38B2CE'
           />
         </View>
         <View style={styles.btn}>
           <Button
-                onPress={()=>navigate('Tropical')}
-                title="Тропический"
-                color='#1B9A1B'
+                onPress={()=>navigate('Vladimir')}
+                title="Владимир"
+                color='#38B2CE'
           />
         </View>
-        <Image source = {require('../images/world.png')}
+        <View style={styles.btn}>
+          <Button
+                onPress={()=>navigate('Ufa')}
+                title="Уфа"
+                color='#38B2CE'
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+                onPress={()=>navigate('Astrakhan')}
+                title="Астрахань"
+                color='#38B2CE'
+          />
+        </View>
+        <View >
+          <TouchableOpacity
+              onPress={()=>navigate('Start')}
+            >
+              <Image source={require('../images/back_o.png')}/>
+          </TouchableOpacity>
+        </View> 
+        <Image source = {require('../images/travel.png')}
           style={styles.img_gg}
         />
-        <View style={styles.btn}>
-          <Button
-                onPress={()=>navigate('Start')}
-                title="Назад"
-                color='#1B9A1B'
-                
-          />
-        </View> 
+        
       </LinearGradient>
     )
   }
@@ -61,12 +79,14 @@ const styles =StyleSheet.create({
     justifyContent: "center"
   },
   btn: {
-    marginTop: 30,
-    arginlorizontal:55,
+    marginTop: 10,
+    fontSize: 30,
+    shadowColor: 'black',
+    width: '60%',
   },
   img_gg: {
-    marginTop: 20,
+    marginTop: 10,
     width:'100%',
-    height:'50%'
+    height:'45%'
   }
 })

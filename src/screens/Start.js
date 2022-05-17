@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, TextInput, Button, Alert, StyleSheet } from 'react-native';
+import { Text, View, Image, TextInput, Button, Alert, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from '@expo/vector-icons/AntDesign';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -22,8 +22,6 @@ export default class Start extends React.Component{
           Добро пожаловать
           </Text>
           <Text style={{
-            fontFanily: 'Regular',
-            marginHrizontal: 55,
             textAlign:'center',
             marginTop:5,
             opacity:0.6 }}
@@ -31,12 +29,12 @@ export default class Start extends React.Component{
           Мобильное приложение для планирования путешествий
           </Text>
           <View style={styles.btn}>
-            <Button
-                onPress={()=>navigate('Menu')}
-                title="Далее"
-                color='#f64f6f'
-            />
-          </View>
+          <TouchableOpacity
+              onPress={()=>navigate('Menu')}
+            >
+              <Image source={require('../images/top.png')}/>
+          </TouchableOpacity>
+        </View> 
           
         </LinearGradient>
     )
@@ -51,7 +49,6 @@ const styles =StyleSheet.create({
   },
   text_start: {
     fontSize: 20,
-    fontFamily:'SemiBold',
     alignSelf:'center', 
     marginTop: 100,
   },
