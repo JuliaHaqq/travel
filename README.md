@@ -11,18 +11,13 @@
 3.	Также реализовать кнопки-картинки, при нажатии которых будет всплывающее окно, в котором можно будет прочитать про достопримечательность
 
 
-<img src="https://user-images.githubusercontent.com/83708760/169363571-ffd8e6ec-b03e-4bdc-b70e-7964062cc60a.png" width="250" height="600"/>
+<img src="https://user-images.githubusercontent.com/83708760/169363571-ffd8e6ec-b03e-4bdc-b70e-7964062cc60a.png" width="300" height="600"/>
 
-![image](https://user-images.githubusercontent.com/83708760/169363571-ffd8e6ec-b03e-4bdc-b70e-7964062cc60a.png)
+<img src="https://user-images.githubusercontent.com/83708760/169363599-d2201f8f-661d-4acb-9ccf-9d255ff608c0.png" width="300" height="600"/>
 
+<img src="https://user-images.githubusercontent.com/83708760/169363616-1aa7d1b1-29fc-42d4-bc04-fc0133e8efc1.png" width="300" height="600"/>
 
-![image](https://user-images.githubusercontent.com/83708760/169363599-d2201f8f-661d-4acb-9ccf-9d255ff608c0.png)
+<img src="https://user-images.githubusercontent.com/83708760/169363646-4eb450b9-3730-4c3d-a105-62b70ee06c24.png" width="300" height="600"/>
 
+<img src="https://user-images.githubusercontent.com/83708760/169363666-a1d1b884-a5f7-4c2c-bf3b-8b3e347e5a86.png" width="300" height="600"/>
 
-![image](https://user-images.githubusercontent.com/83708760/169363616-1aa7d1b1-29fc-42d4-bc04-fc0133e8efc1.png)
-
-
-![image](https://user-images.githubusercontent.com/83708760/169363646-4eb450b9-3730-4c3d-a105-62b70ee06c24.png)
-
-
-![image](https://user-images.githubusercontent.com/83708760/169363666-a1d1b884-a5f7-4c2c-bf3b-8b3e347e5a86.png)
