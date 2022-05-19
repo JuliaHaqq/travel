@@ -11,7 +11,7 @@
 3.	Также реализовать кнопки-картинки, при нажатии которых будет всплывающее окно, в котором можно будет прочитать про достопримечательность
 
 
-<img src="https://user-images.githubusercontent.com/83708760/169363571-ffd8e6ec-b03e-4bdc-b70e-7964062cc60a.png" width="100" height="300"/>
+<img src="https://user-images.githubusercontent.com/83708760/169363571-ffd8e6ec-b03e-4bdc-b70e-7964062cc60a.png" width="250" height="600"/>
 
 ![image](https://user-images.githubusercontent.com/83708760/169363571-ffd8e6ec-b03e-4bdc-b70e-7964062cc60a.png)
 
