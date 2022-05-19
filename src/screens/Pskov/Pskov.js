@@ -36,7 +36,7 @@ export default class Pskov extends React.Component{
                 textAlign:'center',
                 marginTop:5,
                 opacity:0.8 }}
-              >Церкви</Text>
+              >Храмы</Text>
             </View>
 
             <View style={styles.img_gg}>

@@ -18,50 +18,51 @@ export default class A_church extends React.Component{
     
     return(
       <LinearGradient 
-      colors={['#C9FFBF', '#FFAFBD']} 
-      style={styles.centeredView}
-      >
-        <ScrollView>
-          {Object.keys(data.astrakhan.church).map((item, index) => 
-            <>
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={this.state.modalVisible[index]}
-              onRequestClose={() => {
-                this.setState({modalVisible: {...this.state.modalVisible, [index]: false}});
-              }}
+              colors={['#C9FFBF', '#FFAFBD']} 
+              style={styles.centeredView}
             >
-              <LinearGradient
-                colors={['#86fde8', '#FFAFBD']}
-                style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>{data.astrakhan.church[item].description}</Text>
-                  <Pressable
-                    style={[styles.button, styles.buttonClose]}
-                    onPress={() => this.setState({modalVisible: {...this.state.modalVisible, [index]: false}})}
-                  >
-                    <Text style={styles.textStyle}>Закрыть</Text>
-                  </Pressable>
+          <ScrollView>
+        {Object.keys(data.astrakhan.church).map((item, index) => {
+        return(
+          
+          <React.Fragment key={data.astrakhan.church[item].id}>
+              <Modal
+                animationType="slide"
+                transparent={true}
+                visible={this.state.modalVisible[index]}
+                onRequestClose={() => {
+                  this.setState({modalVisible: {...this.state.modalVisible, [index]: false}});
+                }}
+              >
+                  <View style={styles.modalView}>
+                    <Text style={styles.modalText}>{data.astrakhan.church[item].description}</Text>
+                    <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => this.setState({modalVisible: {...this.state.modalVisible, [index]: false}})}
+                    >
+                      <Text style={styles.textStyle}>Закрыть</Text>
+                    </Pressable>
+                  </View>
+              </Modal>
+              
+              <Pressable 
+                style={[styles.button, styles.buttonOpen, styles.img]}
+                onPress={() => 
+                  this.setState({modalVisible: {...this.state.modalVisible, [index]: true}})
+                }
+              > 
+                <View>
+                  <Text style={{alignItems: "center", marginBottom: 10, fontSize: 17, marginLeft: 5, marginRight: 5}}>{data.astrakhan.church[item].name}</Text>
                 </View>
-              </LinearGradient>
-            </Modal>
-
-            <Pressable 
-              style={[styles.button, styles.buttonOpen, styles.img]}
-              onPress={() => 
-                this.setState({modalVisible: {...this.state.modalVisible, [index]: true}})
-              }
-            > 
-              <View >
-                <Text style={{alignItems: "center", marginBottom: 10, fontSize: 17}}>{data.astrakhan.church[item].name}</Text>
-              </View>
-              <Image  source={{ uri: data.astrakhan.church[item].img }} style={{ width: 250, height: 250,  borderRadius: 10, justifyContent: "center"}} />
-            </Pressable>
-            </>
-          )}
+                <Image  source={{ uri: data.astrakhan.church[item].img }} style={{ width: 250, height: 250,  borderRadius: 10, justifyContent: "center"}} />
+              </Pressable>
+            
+          </React.Fragment>
+          
+        )})}
         </ScrollView>
-        <View >
+
+        <View>
               <TouchableOpacity
                 onPress={()=>navigate('Astrakhan')}
               >
@@ -69,10 +70,8 @@ export default class A_church extends React.Component{
               </TouchableOpacity>
         </View>
       </LinearGradient>
-    )
-  }
-}
-
+      
+)}}
 
 const styles =StyleSheet.create({
   centeredView: {

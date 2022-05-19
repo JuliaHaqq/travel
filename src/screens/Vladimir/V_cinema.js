@@ -10,62 +10,61 @@ import * as data from '../../../data/data.json';
 
 export default class V_cinema extends React.Component {
 
-    state = {
+  state = {
       modalVisible: {0: false, 1: false, 2: false}
     };
 
   render(){
-
-    const {navigate} = this.props.navigation
-
-    const church_1 = data.vladimir.cinema.ch_1;
     
-    return (
+    const {navigate} = this.props.navigation
+    
+    return(
       <LinearGradient 
-      colors={['#C9FFBF', '#FFAFBD']} 
-      style={styles.centeredView}
-      >
-        <ScrollView>
-          {Object.keys(data.vladimir.cinema).map((item, index) => 
-            <>
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={this.state.modalVisible[index]}
-              onRequestClose={() => {
-                this.setState({modalVisible: {...this.state.modalVisible, [index]: false}});
-              }}
+              colors={['#C9FFBF', '#FFAFBD']} 
+              style={styles.centeredView}
             >
-              <LinearGradient
-                colors={['#86fde8', '#FFAFBD']} 
-                style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>{data.vladimir.cinema[item].description}</Text>
-                  <Pressable
-                    style={[styles.button, styles.buttonClose]}
-                    onPress={() => this.setState({modalVisible: {...this.state.modalVisible, [index]: false}})}
-                  >
-                    <Text style={styles.textStyle}>Закрыть</Text>
-                  </Pressable>
+          <ScrollView>
+        {Object.keys(data.vladimir.cinema).map((item, index) => {
+        return(
+          
+          <React.Fragment key={data.vladimir.cinema[item].id}>
+              <Modal
+                animationType="slide"
+                transparent={true}
+                visible={this.state.modalVisible[index]}
+                onRequestClose={() => {
+                  this.setState({modalVisible: {...this.state.modalVisible, [index]: false}});
+                }}
+              >
+                  <View style={styles.modalView}>
+                    <Text style={styles.modalText}>{data.vladimir.cinema[item].description}</Text>
+                    <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => this.setState({modalVisible: {...this.state.modalVisible, [index]: false}})}
+                    >
+                      <Text style={styles.textStyle}>Закрыть</Text>
+                    </Pressable>
+                  </View>
+              </Modal>
+              
+              <Pressable 
+                style={[styles.button, styles.buttonOpen, styles.img]}
+                onPress={() => 
+                  this.setState({modalVisible: {...this.state.modalVisible, [index]: true}})
+                }
+              > 
+                <View>
+                  <Text style={{alignItems: "center", marginBottom: 10, fontSize: 17}}>{data.vladimir.cinema[item].name}</Text>
                 </View>
-              </LinearGradient>
-            </Modal>
-
-            <Pressable
-              style={[styles.button, styles.buttonOpen, styles.img]}
-              onPress={() => 
-                this.setState({modalVisible: {...this.state.modalVisible, [index]: true}})
-              }
-            > 
-              <View>
-                <Text style={{alignItems: "center", marginBottom: 10, fontSize: 17}}>{data.vladimir.cinema[item].name}</Text>
-              </View>
-              <Image source={{ uri: data.vladimir.cinema[item].img }} style={{ width: 250, height: 250,  borderRadius: 10, justifyContent: "center"}} />
-            </Pressable>
-            </>
-          )}
+                <Image  source={{ uri: data.vladimir.cinema[item].img }} style={{ width: 250, height: 250,  borderRadius: 10, justifyContent: "center"}} />
+              </Pressable>
+            
+          </React.Fragment>
+          
+        )})}
         </ScrollView>
-        <View >
+
+        <View>
               <TouchableOpacity
                 onPress={()=>navigate('Vladimir')}
               >
@@ -73,9 +72,8 @@ export default class V_cinema extends React.Component {
               </TouchableOpacity>
         </View>
       </LinearGradient>
-    );
-  }
-}
+      
+)}}
 
 const styles = StyleSheet.create({
   centeredView: {
